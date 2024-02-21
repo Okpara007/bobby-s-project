@@ -1,0 +1,40 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>cafechart {%block title%} {%endblock%} </title>
+</head>
+<body>
+    <!-- jinja syntax -->
+
+
+<!-- Top bar -->
+{% include 'partials/_navbar.html' %}
+
+
+<!-- nav bar -->
+{% include 'partials/_sidenav.html' %}
+
+<!-- main content -->
+    {% block content %} 
+    {% endblock %} 
+    
+    
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>  
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="{% static 'js/chart1.js' %}"></script>
+    <script src="{% static 'js/chart2.js' %}"></script>
+    <script src="{% static 'js/piechart.js' %}"></script>
+    <script src="{% static 'js/piechart2.js' %}"></script>
+    <script src="{% static 'js/formHandler.js' %}"></script>
+    
+</body>
+</html>

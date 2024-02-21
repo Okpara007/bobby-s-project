@@ -1,0 +1,214 @@
+{% load static %}
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+{% block content %}
+
+<style>
+    *, *:before, *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      
+      
+      
+      body {
+        font-family: 'Nunito', sans-serif;
+        color: #384047;
+      }
+      
+      form {
+        max-width: 800px; /* Adjusted max-width */
+        margin: 10px auto;
+        padding: 30px 40px; /* Increased padding */
+        background: #f4f7f8;
+        border-radius: 8px;
+      }
+      
+      h1 {
+        margin: 0 0 30px 0;
+        text-align: center;
+      }
+      
+      input[type="text"],
+      input[type="password"],
+      input[type="date"],
+      input[type="datetime"],
+      input[type="email"],
+      input[type="number"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="time"],
+      input[type="url"],
+      textarea,
+      select {
+        background: rgba(255,255,255,0.1);
+        border: none;
+        font-size: 16px;
+        height: auto;
+        margin: 0;
+        outline: 0;
+        padding: 15px;
+        width: 100%;
+        background-color: #e8eeef;
+        color: #8a97a0;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+        margin-bottom: 30px;
+      }
+      
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin: 0 4px 8px 0;
+      }
+      
+      select {
+        padding: 6px;
+        height: 32px;
+        border-radius: 2px;
+      }
+      
+      button {
+        padding: 19px 39px 18px 39px;
+        color: #FFF;
+        background-color: #4bc970;
+        font-size: 18px;
+        text-align: center;
+        font-style: normal;
+        border-radius: 5px;
+        width: 100%;
+        border: 1px solid #3ac162;
+        border-width: 1px 1px 3px;
+        box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+        margin-bottom: 10px;
+      }
+      
+      fieldset {
+        margin-bottom: 30px;
+        border: none;
+      }
+      
+      legend {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+      
+      label.light {
+        font-weight: 300;
+        display: inline;
+      }
+      
+      .number {
+        background-color: #5fcf80;
+        color: #fff;
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        font-size: 0.8em;
+        margin-right: 4px;
+        line-height: 30px;
+        text-align: center;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+        border-radius: 100%;
+      }
+      
+      @media screen and (min-width: 480px) {
+      
+        form {
+          max-width: 680px;
+        }
+      
+      }
+</style>
+
+<div class="container">
+    <div class="row ">
+      <div class="col-md-12 mt-5">
+        <form action="{% url 'forms' %}" method="POST" class="mt-5">
+          {% csrf_token %}
+          <a href="{% url 'index' %}" class="btn mb-4" style="background-color: 5fce7f; color:white">Back to Home</a>
+          {% include 'partials/_alerts.html' %}
+          <h1>Feedback Form</h1>
+          
+          <fieldset>
+            
+            <legend><span class="number">1</span> Personal Information</legend>
+          
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+         
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" required>
+          
+            <label for="level">Level:</label>
+            <input type="text" id="level" name="level" required>
+            
+          </fieldset>
+          <fieldset>  
+          
+            <legend><span class="number">2</span> Meal Feedback</legend>
+            
+            <label for="meal">Select Meal:</label>
+            <select id="meal" name="meal" required>
+                <option>Beans and Stew</option>
+                <option>Cereal and Bread</option>
+                <option>cupcake</option>
+                <option>Custard</option>
+                <option>Eba</option>
+                <option>Egusi soup</option>
+                <option>Fried rice</option>
+                <option>Garri</option>
+                <option>Fried potato and Eggsauce</option>
+                <option>Jollef Rice</option>
+                <option>Jollef Spaghetti</option>
+                <option>Moi Moi</option>
+                <option>Okra soup</option>
+                <option>Pap</option>
+                <option>Plantain and Eggsauce</option> 
+                <option>Porrage Beans</option> 
+                <option>Porrage Yam</option>
+                <option>pounded yam</option>
+                <option>Semo</option>
+                <option>Spaghetti and Egg sauce</option>
+                <option>Spaghetti and Stew</option>
+                <option>Wheat Bread</option>
+                <option>White Bread</option>
+                <option>white rice and Gbadun</option>
+                <option>White rice and Red stew</option>
+                <option>Yam and Egg sauce</option>
+                <option>Yam and Stew</option>
+                <option>Zobo</option>
+            </select>
+          
+            <label for="rating">Rate the meal:</label><br>
+            <input type="radio" id="Very poor" value="1" name="rating"><label for="Very poor" class="light">Very poor</label><br>
+            <input type="radio" id="poor" value="2" name="rating"><label for="poor" class="light">Poor</label><br>
+            <input type="radio" id="fair" value="3" name="rating"><label for="fair" class="light">Fair</label><br>
+            <input type="radio" id="good" value="4" name="rating"><label for="good" class="light">Good</label><br>
+            <input type="radio" id="excellent" value="5" name="rating"><label for="excellent" class="light">Excellent</label>
+
+            
+          </fieldset>
+
+          <button type="submit" value="submit">Submit Feedback</button>
+          
+         </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>  
+<script src="{% static 'js/main.js' %}"></script>

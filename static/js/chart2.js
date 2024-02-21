@@ -1,0 +1,32 @@
+// Global variable for the doughnut chart instance
+var doughnutChart;
+
+document.addEventListener('DOMContentLoaded', function () {
+    var ctx2 = document.getElementById('doughnut').getContext('2d');
+    doughnutChart = new Chart(ctx2, {
+        type: 'doughnut',
+        data: {
+            labels: ['Porridge Yam ', 'Fried Rice', 'Yam & Stew', 'spaghetti & stew'],
+            datasets: [{
+                label: 'Employees',
+                data: [42, 12, 8, 6],
+                backgroundColor: [
+                    'rgba(41, 155, 99, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(120, 46, 139,1)'
+                ],
+                borderColor: [
+                    'rgba(41, 155, 99, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(120, 46, 139,1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+});
