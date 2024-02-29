@@ -2,7 +2,6 @@ annotated-types==0.6.0
 asgiref==3.7.2
 autopep8 @ file:///opt/conda/conda-bld/autopep8_1650463822033/work
 Babel @ file:///Users/cbousseau/work/recipes/ci_py311/babel_1677920677615/work
-beautifulsoup4 @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_fa78jvo_0n/croot/beautifulsoup4-split_1681493044306/work
 camelcase==0.2
 dj-database-url==2.1.0
 Django==5.0.2
