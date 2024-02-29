@@ -16,10 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views  # Import Django's auth views
 
 urlpatterns = [
     path("", include("pages.urls")),
-    path("forms", include("forms.urls")),
-    path("charts", include("charts.urls")),
-    path("admin/", admin.site.urls)
+    path("forms/", include("forms.urls")),
+    path("charts/", include("charts.urls")),
+    path("admin/", admin.site.urls),
+    # Add the login path
+    path("login/", auth_views.LoginView.as_view(), name='login'),
 ]
+

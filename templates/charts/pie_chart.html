@@ -31,10 +31,14 @@
 
     /* Change the background color of the dropdown button when the dropdown content is shown */
     .dropdown:hover .dropbtn {background-color: #5fce7f;}
+
+    #myChart {
+        max-width: 750px;
+        max-height: 750px;
+    }
 </style>
 
 <a href="{% url 'index' %}" class="btn mb-4" style="background-color: #5fce7f; color:white; text-decoration: none; padding: 0.5rem; border-radius: 5px; margin:5px">Back to Home</a>
-
 <div class="dropdown">
     <button style="padding: 0.5rem; border-radius: 5px;" class="dropbtn">Select Chart</button>
     <div class="dropdown-content">
@@ -47,19 +51,31 @@
 </div>
 <!-- Include the Chart.js library -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<canvas id="myChart"></canvas>
+
+<!-- Your chart canvas element -->
+<canvas id="myChart" style="position: relative; left: 24%;"></canvas>
+
 <script>
     var chartData = JSON.parse('{{ chart_data|safe }}');
+
+    const data = {
+        labels: chartData.labels,
+        datasets: [{
+            label: 'My First Dataset',
+            data: chartData.data,
+            backgroundColor: chartData.backgroundColor,
+            hoverOffset: 4
+        }]
+    };
+
+    const config = {
+        type: 'pie',
+        data: data,
+    };
+
+    // Initialize the chart
     var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: chartData,
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+    var myChart = new Chart(ctx, config);
 </script>
+    
+    

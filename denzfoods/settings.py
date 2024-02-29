@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -133,9 +134,13 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+LOGIN_URL = 'login/'
+
 # messages 
 from django.contrib.messages import constants as messages
 
 MESSAGE_TAGS = {
     messages.ERROR: "danger"
 } 
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'  # or 'bootstrap5' depending on the version you are using
