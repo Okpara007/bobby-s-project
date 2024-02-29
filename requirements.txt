@@ -90,7 +90,9 @@ defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
 diff-match-patch @ file:///Users/ktietz/demo/mc3/conda-bld/diff-match-patch_1630511840874/work
 dill @ file:///Users/cbousseau/work/recipes/ci_py311/dill_1677926161443/work
 distributed @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_46b2z6ud_6/croot/distributed_1686866053959/work
+dj-database-url==2.1.0
 Django==5.0.2
+django-crispy-forms==2.1
 docopt==0.6.2
 docstring-to-markdown @ file:///Users/cbousseau/work/recipes/ci_py311/docstring-to-markdown_1677931891483/work
 docutils @ file:///Users/cbousseau/work/recipes/ci_py311/docutils_1677907269557/work
@@ -436,6 +438,7 @@ PySocks @ file:///Users/cbousseau/work/recipes/ci_py311/pysocks_1677906386870/wo
 pysummarization==1.1.9
 pytest @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_75ehl8i878/croot/pytest_1690474711033/work
 python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+python-dotenv==1.0.1
 python-json-logger @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_c3baq2ko4j/croot/python-json-logger_1683823815343/work
 python-lsp-black @ file:///Users/cbousseau/work/recipes/ci_py311/python-lsp-black_1677961743861/work
 python-lsp-jsonrpc==1.0.0

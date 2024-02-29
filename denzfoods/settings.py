@@ -12,21 +12,30 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+from pathlib import Path
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(os.path.join(BASE_DIR/" .eVar", ".env" ))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-oem*^h8os*irq9d#8rgn%jssk1!@l=sxtu^hgk#m#q2i%^1m&w"
+SECRET_KEY = os.environ.get("SECRET_KEY", "your_default_secret_key")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Retrieve DEBUG from environment variable or set a default value
+DEBUG = os.environ.get("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = []
+# Retrieve ALLOWED_HOSTS from environment variable or set a default value
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+
+# Remove empty strings from the list and strip whitespace from each entry
+ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS if host.strip()]
 
 
 # Application definition
@@ -79,15 +88,20 @@ WSGI_APPLICATION = "denzfoods.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "Form",
-        'USER': 'root',  # Replace with your MySQL username
-        'PASSWORD': '7evenrules',  # Replace with your MySQL password
-        'HOST': 'localhost',  # Or the host where your MySQL server is running
-        'PORT': '3306',
-    }
+    'default': dj_database_url.config(
+        default='mysql://root:7evenrules@localhost:3306/Form')
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "Form",
+#         'USER': 'root',  # Replace with your MySQL username
+#         'PASSWORD': '7evenrules',  # Replace with your MySQL password
+#         'HOST': 'localhost',  # Or the host where your MySQL server is running
+#         'PORT': '3306',
+#     }
+# }
 
 
 # Password validation
