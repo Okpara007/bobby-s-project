@@ -88,8 +88,7 @@ WSGI_APPLICATION = "denzfoods.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='mysql://root:7evenrules@localhost:3306/Form')
+    'default': dj_database_url.config(default='mysql://root:7evenrules@127.0.0.1:3306/Form')
 }
 
 # DATABASES = {
