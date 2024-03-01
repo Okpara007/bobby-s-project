@@ -16,8 +16,6 @@ pydantic_core==2.14.5
 pylint
 pylint-venv
 PyMySQL==1.1.0
-pyobjc==10.0
-pyobjc-core==10.0
 pyparsing
 python-dotenv==1.0.1
 SQLAlchemy
