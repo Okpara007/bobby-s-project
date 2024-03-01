@@ -1,4 +1,4 @@
-#!/Users/delight/denzel_fypII/venv/bin/python
+#!/Users/delight/Documents/denzel_fypII/venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys

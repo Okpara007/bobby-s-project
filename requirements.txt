@@ -20,7 +20,6 @@ pyparsing
 python-dotenv==1.0.1
 SQLAlchemy
 sqlparse==0.4.4
-TBB
 typeddict==0.3.0
 typing_extensions==4.10.0
 Unidecode
