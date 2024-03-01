@@ -1,28 +1,28 @@
 annotated-types==0.6.0
 asgiref==3.7.2
-autopep8 @ file:///opt/conda/conda-bld/autopep8_1650463822033/work
-Babel @ file:///Users/cbousseau/work/recipes/ci_py311/babel_1677920677615/work
+autopep8 # Replace <version_number> with the specific version you need or remove it for the latest version
+Babel
 camelcase==0.2
 dj-database-url==2.1.0
 Django==5.0.2
 django-crispy-forms==2.1
-Jinja2 @ file:///Users/cbousseau/work/recipes/ci_py311/jinja2_1677916113134/work
-jinja2-time @ file:///opt/conda/conda-bld/jinja2-time_1649251842261/work
+Jinja2
+jinja2-time
 mysqlclient==2.2.4
 pep8==1.7.1
 Pillow==9.4.0
 pydantic==1.10.14
 pydantic_core==2.14.5
-pylint @ file:///Users/cbousseau/work/recipes/ci_py311/pylint_1677933699245/work
-pylint-venv @ file:///Users/cbousseau/work/recipes/ci_py311/pylint-venv_1677961443839/work
+pylint
+pylint-venv
 PyMySQL==1.1.0
 pyobjc==10.0
 pyobjc-core==10.0
-pyparsing @ file:///Users/cbousseau/work/recipes/ci_py311/pyparsing_1677910832141/work
+pyparsing
 python-dotenv==1.0.1
-SQLAlchemy @ file:///Users/cbousseau/work/recipes/ci_py311/sqlalchemy_1677934876727/work
+SQLAlchemy
 sqlparse==0.4.4
 TBB==0.2
 typeddict==0.3.0
 typing_extensions==4.10.0
-Unidecode @ file:///tmp/build/80754af9/unidecode_1614712377438/work
+Unidecode
