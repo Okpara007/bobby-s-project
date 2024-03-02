@@ -26,13 +26,13 @@ load_dotenv(os.path.join(BASE_DIR/" .eVar", ".env" ))
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY", "your_default_secret_key")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Retrieve DEBUG from environment variable or set a default value
-DEBUG = os.environ.get("DEBUG", "True") == "True"
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
 # Retrieve ALLOWED_HOSTS from environment variable or set a default value
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 # Remove empty strings from the list and strip whitespace from each entry
 ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS if host.strip()]
@@ -100,6 +100,9 @@ DATABASES = {
         'HOST': 'localhost',  # Or the host where your MySQL server is running
     }
 }
+
+database_url = os.environ.get("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse(database_url)
 
 
 
