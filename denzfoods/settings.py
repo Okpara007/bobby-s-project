@@ -92,30 +92,16 @@ WSGI_APPLICATION = "denzfoods.wsgi.application"
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(default='mysql://delightokpara:7evenrules@delightokpara.mysql.pythonanywhere-services.com:3306/delightokpara$FormDB')
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "pfuxpszv",
+        'USER': 'pfuxpszv',  # Replace with your MySQL username
+        'PASSWORD': 'cafechart1234',  # Replace with your MySQL password
+        'HOST': 'localhost',  # Or the host where your MySQL server is running
+    }
 }
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.mysql",
-#         "NAME": "Form",
-#         'USER': 'root',  # Replace with your MySQL username
-#         'PASSWORD': '7evenrules',  # Replace with your MySQL password
-#         'HOST': 'localhost',  # Or the host where your MySQL server is running
-#         'PORT': '3306',
-#     }
-# }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'delightokpara$FormDB',  # Your PythonAnywhere database name
-#         'USER': 'delightokpara',         # Your PythonAnywhere username
-#         'PASSWORD': '7evenrules',        # The password for your database on PythonAnywhere
-#         'HOST': 'delightokpara.mysql.pythonanywhere-services.com',  # Your PythonAnywhere database host
-#         'PORT': '3306',                  # The default port for MySQL
-#     }
-# }
 
 
 # Password validation
