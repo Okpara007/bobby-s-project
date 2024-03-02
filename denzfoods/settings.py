@@ -89,18 +89,19 @@ WSGI_APPLICATION = "denzfoods.wsgi.application"
 #     'default': dj_database_url.config(default='mysql://root:7evenrules@127.0.0.1:3306/Form')
 # }
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "cafechartdb",
-        'USER': 'postgres',  # Replace with your MySQL username
-        'PASSWORD': 'cafechart1234',  # Replace with your MySQL password
-        'HOST': 'localhost',  # Or the host where your MySQL server is running
-    }
-}
-
 database_url = os.environ.get("DATABASE_URL")
-DATABASES["default"] = dj_database_url.parse(database_url)
+if database_url:
+    DATABASES = {"default": dj_database_url.parse(database_url)}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "cafechartdb",
+            "USER": 'postgres',
+            "PASSWORD": 'cafechart1234',
+            "HOST": 'localhost',
+        }
+    }
 
 
 
