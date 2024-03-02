@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
 # Retrieve ALLOWED_HOSTS from environment variable or set a default value
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = ['bobby-s-project.onrender.com', 'localhost', '127.0.0.1']
 
 
 
