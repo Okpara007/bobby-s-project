@@ -94,8 +94,8 @@ WSGI_APPLICATION = "denzfoods.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "pfuxpszv",
-        'USER': 'pfuxpszv',  # Replace with your MySQL username
+        "NAME": "cafechartdb",
+        'USER': 'postgres',  # Replace with your MySQL username
         'PASSWORD': 'cafechart1234',  # Replace with your MySQL password
         'HOST': 'localhost',  # Or the host where your MySQL server is running
     }
